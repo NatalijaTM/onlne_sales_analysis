@@ -26,4 +26,12 @@ class ProductManager:
         for product in self.products:
             total += product.price * product.quantity
         print(f"Ukupna vrednost svih proizvoda je: {total}")
-        
+
+    #Metod za uklanjanje proizvoda
+    def remove_product(self, name):
+        for product in self.products:
+            if product.name == name:
+                self.products.remove(product)
+                print("Proizvod je uspešno uklonjen.")
+                return
+        print("Proizvod nije pronađen.")   
